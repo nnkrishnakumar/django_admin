@@ -85,3 +85,38 @@ home.html
     
 </body>
 </html>
+
+
+
+<!-- how to use for loop in django -->
+html file
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        .main{
+        width:1000px;
+        background-color: red;
+        color: white;
+
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="main"><h1>Welcome to AI Martians {{subject}}</h1> </div>
+    {% for i in subject %}
+    <div class="main">{{forloop.counter}} {{i}}</div>
+    {% endfor %}
+
+</body>
+</html>
+
+<!-- Django Template using if...elif...else -->
+
+<!-- managing static files (e.g. images,JavaScript,CSS) STATICFILES_DIRS -->
+

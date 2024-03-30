@@ -16,6 +16,13 @@
 </head>
 <body>
     <div class="main"><h1>Welcome to AI Martians {{subject}}</h1> </div>
-    
+    {% if subject|length > 0 %}
+        {% for i in subject %}
+        <div class="main">{{forloop.counter}} {{i}}</div>
+        {% endfor %}
+    {% else %}
+        No data found
+    {% endif %}
+
 </body>
 </html>
