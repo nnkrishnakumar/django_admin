@@ -36,3 +36,14 @@ Note: can get the user name and password of superuser inside the table called sq
 
 <!-- how to create Views and Urls and how to connect  -->
 
+
+How to create dynamic routes url in django
+
+dynamic routes are of three type:
+
+1> int   :     path("home/<int:content_id>",views.home_content,name="content"),
+2> str  :  path("home/<str:content_id>",views.home_content,name="content"),
+3> slug     : example: hello-ws-iip :     path("home/<slug:course>",views.home_course,name="course")
+
+
+
