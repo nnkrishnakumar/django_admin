@@ -1,7 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 def home(request):
-    return render(request,'home.html')
+    data={
+        "title":"Martians",
+        "subject":["Python","Machine learning","Deep Learning"]
+    }
+    return render(request,'home.html',data)
 
 def home_content(request,content_id):
     return HttpResponse("this is content of home page")

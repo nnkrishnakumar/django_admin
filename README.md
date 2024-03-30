@@ -46,4 +46,42 @@ dynamic routes are of three type:
 3> slug     : example: hello-ws-iip :     path("home/<slug:course>",views.home_course,name="course")
 
 
+<!-- how to configure html file using templates -->
+from django.shortcuts import render
+<!-- views.py -->
+def home(request):
+    return render(request,'home.html')
+<!-- urls.py -->
+    path('',views.home,name='home'),
 
+
+<!-- How to pass data from views.py to templates -->
+views.py
+def home(request):
+    data={
+        "title":"Martians"
+    }
+    return render(request,'home.html',data)
+
+home.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        .main{
+        width:1000px;
+        background-color: red;
+        color: white;
+
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="main"><h1>Welcome to AI Martians</h1> </div>
+    
+</body>
+</html>
