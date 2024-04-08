@@ -132,3 +132,62 @@ STATICFILES_DIRS=[
 
 ---------------------------------------------------------------------------------
 Header and footer include in django HTML Tamplate include
+
+Header and footer html file mostly common for all the webpage of a website
+
+NOTE: it is used to reduce repetations 
+
+{% include "header.html" %}
+{% include "footer.html" %}
+
+-----------------------------------------------------------------------------
+Extends - Django Templates Tags
+
+create a single file of html base.html create  include content of the html between {% block content %} and end the block content {% endblock %}
+
+
+{% include "header.html" %}
+
+{% block content %}
+
+{% endblock %}
+
+{% include "footer.html" %}
+
+--------------------------------------------------------------------------------
+Django URL templates
+
+There are two ways to connect two templates together 
+
+1st way:
+
+
+2nd way: 
+
+in urls.py
+
+urlpatterns=[
+    path("admin/", admin.site.urls),
+    path("home/", views.home,name="home"),
+    path("about/", views.about,name="about"),
+    path("contact-us/",views.contact,name="contact"),
+    
+]
+
+now in header.html
+where all the header details like , home, about, contact icon available
+
+do some changes into 
+
+<a href="{% url 'home' %}">Home</a>
+<a href="{% url 'about' %}">About</a>
+<a href="{% url 'contact' %}">Contact us</a>
+
+---------------------------------------------------------------------------------------
+How to highlight active links in Django
+
+in header.html
+
+<li class="{% if request.path == '/' %} active {% endif %}">
+<li class="{% if request.path == '/' %} active {% endif %}">
+<li class="{% if request.path == '/' %} active {% endif %}">
