@@ -120,3 +120,15 @@ html file
 
 <!-- managing static files (e.g. images,JavaScript,CSS) STATICFILES_DIRS -->
 
+----------------------------------------------------------------------------
+configure static folder which contain css and javascript files of a project using 
+
+in settings.py file.
+
+STATICFILES_DIRS=[
+    BASE_DIR,"static"
+]
+
+
+---------------------------------------------------------------------------------
+Header and footer include in django HTML Tamplate include
